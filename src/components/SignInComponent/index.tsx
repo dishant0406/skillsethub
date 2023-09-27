@@ -1,4 +1,3 @@
-// pages/login.tsx
 'use client';
 import React, { useState } from 'react';
 import { CountryDropdown } from 'react-country-region-selector';
@@ -6,7 +5,7 @@ import { CountryDropdown } from 'react-country-region-selector';
 type Props = {};
 
 
-const LoginPage: React.FC = () =>
+const SignInComponent: React.FC = () =>
 {
   const [email, setEmail] = useState('');
   const [country, setCountry] = useState('');
@@ -24,9 +23,9 @@ const LoginPage: React.FC = () =>
   }
 
   return (
-    <div className="flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 shadow-md rounded-md w-80">
-        <h2 className="text-2xl font-semibold mb-4">Login</h2>
+    <div className="flex items-center justify-center bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-white to-90% h-[100vh] w-[100vw]">
+      <div className="bg-white/60 p-8 shadow-md rounded-md w-90 h-[50vh]">
+        <h2 className="text-2xl font-semibold mb-4">Login / Sign In</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">Email</label>
@@ -40,10 +39,11 @@ const LoginPage: React.FC = () =>
           </div>
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">Country</label>
+
             <CountryDropdown
               value={country}
               onChange={selectCountry}
-              classes='w-[100%] p-2 border border-gray-300 rounded-md'
+              classes='w-[100%] mt-1 p-2 w-full border border-gray-300 rounded-md'
             />
           </div>
           <div className="mb-4">
@@ -54,8 +54,8 @@ const LoginPage: React.FC = () =>
               onChange={(e) => setUserType(e.target.value)}
               required
             >
-              <option value="" disabled>Select user type</option>
-              <option value="educator">Educator</option>
+              <option value="" disabled>Select User Type</option>
+              <option value="curriculamDeveloper">Curriculam Developer</option>
               <option value="student">Student</option>
             </select>
           </div>
@@ -73,4 +73,4 @@ const LoginPage: React.FC = () =>
   );
 };
 
-export default LoginPage;
+export default SignInComponent;
