@@ -24,7 +24,7 @@ const SignInComponent: React.FC = () =>
 
   return (
     <div className="flex items-center justify-center bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-white to-90% h-[100vh] w-[100vw]">
-      <div className="bg-white/60 p-8 shadow-md rounded-md w-90 h-[50vh]">
+      <div className="bg-white/60 p-8 shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] rounded-md w-90 h-[50vh]">
         <h2 className="text-center text-2xl font-semibold mb-4">Login / Sign Up</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -34,6 +34,7 @@ const SignInComponent: React.FC = () =>
               className="mt-1 p-2 w-full border border-gray-300 rounded-md"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder='Enter Your Email'
               required
             />
           </div>
