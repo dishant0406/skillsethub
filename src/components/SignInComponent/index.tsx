@@ -19,7 +19,7 @@ const SignInComponent: React.FC = () =>
   };
   const selectCountry = (val: any) =>
   {
-    setRegion(val);
+    setCountry(val);
   }
 
   return (
