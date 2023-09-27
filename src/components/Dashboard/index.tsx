@@ -8,9 +8,11 @@ import { SlCalender } from 'react-icons/sl'
 import { BsPlusCircle } from 'react-icons/bs'
 import { BsFillFilePdfFill, BsFiletypeTxt, BsCameraVideo } from 'react-icons/bs'
 import { FaHouseUser } from 'react-icons/fa'
+import { useRouter } from 'next/navigation'
 type Props = {}
 
 const DashboardComponent = (props: Props) => {
+  const router = useRouter()
   const circu = [
     {
       name: 'Sample Curriculum 1',
@@ -58,7 +60,10 @@ const DashboardComponent = (props: Props) => {
         </p>
         <div className='flex items-center'>
           <div className='flex items-center justify-center rounded-full h-[2rem] w-[2rem]'>
-            <FaHouseUser className=' text-xl' />
+            <FaHouseUser onClick={() => {
+              localStorage.removeItem('token')
+              router.push('/login')
+            }} className=' text-xl cursor-pointer' />
           </div>
           {/* <div className='flex items-center justify-center rounded-full h-[2rem] w-[2rem] ml-[1rem]'>
             <BsPlusCircle className=' text-xl' />

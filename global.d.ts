@@ -8,4 +8,6 @@ type User = {
   firstName: string;
   lastName: string;
   role: string;
+  email:string;
+  status:string;
 }

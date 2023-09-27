@@ -36,7 +36,8 @@ const Template = ({ children }: any) => {
         })
 
         if (data.status === 'success') {
-          setUser(data.user)
+          setUser(data.data.user)
+          console.log(data.data.user)
           router.push('/dashboard/curriculum-dev?tab=dashboard')
         } else {
           router.push('/login')

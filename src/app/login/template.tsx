@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { SideBar } from '@/components'
 import { useUserStore } from '@/utils/Zustand'
 import { useRouter } from 'next/navigation'
@@ -13,14 +13,16 @@ const Template = ({ children }: Props) => {
   const { user } = useUserStore()
   const router = useRouter()
 
+  useEffect(() => {
+    if (user?._id) {
+      router.push('/dashboard/curriculum-dev?tab=dashboard')
+    }
+  }, [user])
 
   return (
-    <div className='flex h-[100vh] items-center'>
-      <SideBar />
-      <div className='w-[75vw] p-[1rem] pl-[0] h-full'>
-        {children}
-      </div>
-    </div>
+    <>
+      {children}
+    </>
   )
 }
 
