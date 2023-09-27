@@ -11,7 +11,7 @@ const Template = ({ children }: Props) => {
   return (
     <div className='flex h-[100vh] items-center'>
       <SideBar />
-      <div className='w-full p-[1rem] pl-[0] h-full'>
+      <div className='w-[75vw] p-[1rem] pl-[0] h-full'>
         {children}
       </div>
     </div>
