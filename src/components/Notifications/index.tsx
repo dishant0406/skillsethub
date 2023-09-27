@@ -3,7 +3,8 @@ import React from "react";
 import { IoInformationCircleOutline } from "react-icons/io5";
 type Props = {};
 
-const NotificationComponent = () => {
+const NotificationComponent = () =>
+{
   return (
     <div className="mx-auto my-20 flex max-w-screen-lg flex-col gap-8">
       <div className="flex flex-col p-8 bg-[#36464E] shadow-md hover:shodow-lg rounded-2xl">
