@@ -48,10 +48,10 @@ const SignInComponent: React.FC = () =>
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">User Type</label>
             <select
-              className="mt-1 p-2 w-full border border-gray-300 rounded-md"
               value={userType}
               onChange={(e) => setUserType(e.target.value)}
               required
+              className={`mt-1 p-2 w-full border border-gray-300 rounded-md ${userType ? 'text-black' : 'text-black/50'} `}
             >
               <option value="" disabled className='text-black/50'>Select User Type</option>
               <option value="curriculamDeveloper" >Curriculam Developer</option>
