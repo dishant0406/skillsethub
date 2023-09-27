@@ -1,11 +1,20 @@
+import { NotificationComponent } from '@/components'
 import React from 'react'
 
-type Props = {}
+type Props = {
 
-const CirculamDev = (props: Props) => {
+}
+
+const CirculamDev = ({ searchParams }: any) => {
+
+  const { tab } = searchParams
+
+  console.log('tab', tab)
+  if (!tab) return null
+
   return (
     <div>
-
+      {tab === 'notifications' && <NotificationComponent />}
     </div>
   )
 }

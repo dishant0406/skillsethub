@@ -9,8 +9,11 @@ type Props = {
 
 const Template = ({ children }: Props) => {
   return (
-    <div className='flex items-center'>
+    <div className='flex h-[100vh] items-center'>
       <SideBar />
+      <div className='w-full p-[1rem] pl-[0] h-full'>
+        {children}
+      </div>
     </div>
   )
 }
