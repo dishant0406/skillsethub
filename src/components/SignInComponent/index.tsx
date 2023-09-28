@@ -91,7 +91,7 @@ const SignInComponent: React.FC = () => {
               className={`mt-1 p-2 w-full border border-gray-300 rounded-md ${userType ? 'text-black' : 'text-black/50'} `}
             >
               <option value="" disabled className='text-black/50'>Select User Type</option>
-              <option value="curriculam developer" >Curriculam Developer</option>
+              <option value="curriculum developer" >Curriculum Developer</option>
               <option value="educator">Educator</option>
             </select>
           </div>

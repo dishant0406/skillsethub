@@ -77,7 +77,7 @@ const DashboardComponent = (props: Props) => {
           </div> */}
         </div>
       </div>
-      <div className='m-[1rem] flex items-center justify-between'>
+      {/* <div className='m-[1rem] flex items-center justify-between'>
         <div className='h-[8rem] px-[1rem] relative w-[16rem] bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl'>
           <div className='absolute  shadow-[0_3px_10px_rgb(0,0,0,0.2)] top-[-20%] h-[4rem] w-[4rem] left-[10%] flex items-center justify-center bg-orange-600 rounded-xl' >
             <RiBook3Fill className='text-white text-3xl' />
@@ -120,7 +120,7 @@ const DashboardComponent = (props: Props) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className='w-full flex mx-[1rem] mt-[3rem] gap-[2rem]'>
         <div className='py-[1rem] p-[1rem] relative w-[60%] bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl'>
           <div className='flex w-full items-center justify-between'>
