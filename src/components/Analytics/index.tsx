@@ -7,7 +7,12 @@ import { SlCalender } from "react-icons/sl";
 import { FaHouseUser } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { useUserStore } from "@/utils/Zustand";
-const Analytics = () => {
+import ChartComponent from "./chart";
+import ChartComponent2 from "./chart2";
+
+
+const Analytics = () =>
+{
   const { curriculums } = useUserStore()
   return (
     <div className=" w-full flex flex-col items-center h-full">
@@ -58,11 +63,13 @@ const Analytics = () => {
           </div>
         </div>
       </div>
-      <div className="mt-[2rem] w-full flex justify-center">
-        <img src='https://quickchart.io/chart?bkg=white&c=%7B%0A%20%20type%3A%20%27bar%27%2C%0A%20%20data%3A%20%7B%0A%20%20%20%20labels%3A%20%5B%27Q1%27%2C%20%27Q2%27%2C%20%27Q3%27%2C%20%27Q4%27%5D%2C%0A%20%20%20%20datasets%3A%20%5B%7B%0A%20%20%20%20%20%20label%3A%20%27Curriculums%27%2C%0A%20%20%20%20%20%20data%3A%20%5B50%2C%2060%2C%2070%2C%20180%5D%0A%20%20%20%20%7D%2C%20%7B%0A%20%20%20%20%20%20label%3A%20%27Feedbacks%27%2C%0A%20%20%20%20%20%20data%3A%20%5B100%2C%20200%2C%20300%2C%20400%5D%0A%20%20%20%20%7D%5D%0A%20%20%7D%0A%7D' className="
-        w-[50%]
-        h-auto
-        "/>
+      <div className="flex justify-between mt-[5rem] w-full items-center" >
+        <div className="">
+          <ChartComponent />
+        </div>
+        <div className="">
+          <ChartComponent2 />
+        </div>
       </div>
     </div >
   );
