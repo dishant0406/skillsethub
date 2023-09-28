@@ -12,7 +12,7 @@ const Template = ({ children }: any) => {
   const [loading, setLoading] = useState(false)
   const query = useSearchParams()
   const router = useRouter()
-  const { user, setUser } = useUserStore()
+  const { user, setCurrculums, setUser } = useUserStore()
   let token = query.get('token')
 
   useEffect(() => {
@@ -37,7 +37,8 @@ const Template = ({ children }: any) => {
 
         if (data.status === 'success') {
           setUser(data.data.user)
-          console.log(data.data.user)
+          setCurrculums(data.data.curriculums)
+          // console.log(data.data.user)
           router.push('/dashboard/curriculum-dev?tab=dashboard')
         } else {
           router.push('/login')

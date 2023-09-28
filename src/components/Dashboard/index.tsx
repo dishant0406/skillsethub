@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { RiBook3Fill } from 'react-icons/ri'
 import { BsFileBarGraph } from 'react-icons/bs'
 import { BiSolidCommentDetail } from 'react-icons/bi'
@@ -9,10 +9,13 @@ import { BsPlusCircle } from 'react-icons/bs'
 import { BsFillFilePdfFill, BsFiletypeTxt, BsCameraVideo } from 'react-icons/bs'
 import { FaHouseUser } from 'react-icons/fa'
 import { useRouter } from 'next/navigation'
+import CreateCurriculum from '../Modals/CreateCurriculum'
+import { useUserStore } from '@/utils/Zustand'
 type Props = {}
 
 const DashboardComponent = (props: Props) => {
   const router = useRouter()
+  const [isCreateOpen, setIsCreateOpen] = useState(false)
   const circu = [
     {
       name: 'Sample Curriculum 1',
@@ -51,6 +54,10 @@ const DashboardComponent = (props: Props) => {
     }
   ]
 
+  const { user, curriculums } = useUserStore()
+
+  console.log(curriculums)
+
 
   return (
     <div className='w-full h-full'>
@@ -76,8 +83,10 @@ const DashboardComponent = (props: Props) => {
             <RiBook3Fill className='text-white text-3xl' />
           </div>
           <div className='w-full flex items-end h-full justify-center flex-col px-[0.5rem]'>
-            <div className='   text-gray-400'>Total Courses</div>
-            <div className='text-[40px] text-gray-800 font-bold'>100</div>
+            <div className='   text-gray-400'>Total Curriculum</div>
+            <div className='text-[40px] text-gray-800 font-bold'>{
+              curriculums.length
+            }</div>
           </div>
         </div>
         <div className='h-[8rem] px-[1rem] relative w-[16rem] bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl'>
@@ -120,11 +129,15 @@ const DashboardComponent = (props: Props) => {
                 Added Curriculum
               </p>
               <p className='text-gray-400 text-[14px] ml-[0.5rem]'>
-                <span className='font-bold'>10</span> added this month
+                <span className='font-bold'>{
+                  curriculums.length
+                }</span> added this month
               </p>
             </div>
             <div className='flex items-center'>
-              <div className='flex items-center justify-center rounded-full h-[2rem] w-[2rem]'>
+              <div onClick={() => {
+                setIsCreateOpen(true)
+              }} className='flex items-center justify-center rounded-full h-[2rem] w-[2rem]'>
                 <BsPlusCircle className=' text-xl' />
               </div>
             </div>
@@ -142,17 +155,19 @@ const DashboardComponent = (props: Props) => {
               </p>
             </div>
             {
-              circu.map((item, index) => {
+              curriculums.map((item: any, index: any) => {
                 return (
-                  <div key={item.name} className='w-full shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] rounded-md p-[0.5rem] py-[1rem] transition-all duration-300 cursor-pointer hover:bg-black/20 gap-[1rem] mt-[1rem] flex'>
+                  <div key={item.title} className='w-full shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] rounded-md p-[0.5rem] py-[1rem] transition-all duration-300 cursor-pointer hover:bg-black/20 gap-[1rem] mt-[1rem] flex'>
                     <p className='text-[14px] truncate w-[60%] font-bold text-black'>
-                      {item.name}
+                      {item.title}
                     </p>
                     <p className='text-[14px] truncate w-[20%] font-bold text-black'>
-                      {item.date}
+                      {
+                        new Date(item.createdAt).toLocaleString().split(',')[0]
+                      }
                     </p>
                     <p className='text-[14px] truncate w-[20%] font-bold text-black'>
-                      {item.reviews}
+                      {item.feedback.length}
                     </p>
                   </div>
                 )
@@ -217,6 +232,7 @@ const DashboardComponent = (props: Props) => {
           </div>
         </div>
       </div>
+      <CreateCurriculum isOpen={isCreateOpen} setIsOpen={setIsCreateOpen} />
     </div>
   )
 }
