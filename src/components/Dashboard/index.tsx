@@ -1,13 +1,8 @@
 'use client'
 
 import React from 'react'
-import { RiBook3Fill } from 'react-icons/ri'
-import { BsFileBarGraph } from 'react-icons/bs'
-import { BiSolidCommentDetail } from 'react-icons/bi'
-import { SlCalender } from 'react-icons/sl'
 import { BsPlusCircle } from 'react-icons/bs'
 import { BsFillFilePdfFill, BsFiletypeTxt, BsCameraVideo } from 'react-icons/bs'
-import { FaHouseUser } from 'react-icons/fa'
 import { useRouter } from 'next/navigation'
 type Props = {}
 
@@ -54,64 +49,8 @@ const DashboardComponent = (props: Props) => {
 
   return (
     <div className='w-full h-full'>
-      <div className='my-[1rem] px-[1rem] mb-[3rem] flex items-center justify-between'>
-        <p className='text-black/50'>
-          Dashboard / <span className='text-black'>Home</span>
-        </p>
-        <div className='flex items-center'>
-          <div className='flex items-center justify-center rounded-full h-[2rem] w-[2rem]'>
-            <FaHouseUser onClick={() => {
-              localStorage.removeItem('token')
-              router.push('/login')
-            }} className=' text-xl cursor-pointer' />
-          </div>
-          {/* <div className='flex items-center justify-center rounded-full h-[2rem] w-[2rem] ml-[1rem]'>
-            <BsPlusCircle className=' text-xl' />
-          </div> */}
-        </div>
-      </div>
-      <div className='m-[1rem] flex items-center justify-between'>
-        <div className='h-[8rem] px-[1rem] relative w-[16rem] bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl'>
-          <div className='absolute  shadow-[0_3px_10px_rgb(0,0,0,0.2)] top-[-20%] h-[4rem] w-[4rem] left-[10%] flex items-center justify-center bg-orange-600 rounded-xl' >
-            <RiBook3Fill className='text-white text-3xl' />
-          </div>
-          <div className='w-full flex items-end h-full justify-center flex-col px-[0.5rem]'>
-            <div className='   text-gray-400'>Total Courses</div>
-            <div className='text-[40px] text-gray-800 font-bold'>100</div>
-          </div>
-        </div>
-        <div className='h-[8rem] px-[1rem] relative w-[16rem] bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl'>
-          <div className='absolute  shadow-[0_3px_10px_rgb(0,0,0,0.2)] top-[-20%] h-[4rem] w-[4rem] left-[10%] flex items-center justify-center bg-blue-600 rounded-xl' >
-            <BsFileBarGraph className='text-white text-3xl' />
-          </div>
-          <div className='w-full flex items-end h-full justify-center flex-col px-[0.5rem]'>
-            <div className='   text-gray-400'>Total Resources</div>
-            <div className='text-[40px] text-gray-800 font-bold'>100+</div>
-          </div>
-        </div>
-        <div className='h-[8rem] px-[1rem] relative w-[16rem] bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl'>
-          <div className='absolute  shadow-[0_3px_10px_rgb(0,0,0,0.2)] top-[-20%] h-[4rem] w-[4rem] left-[10%] flex items-center justify-center bg-green-600 rounded-xl' >
-            <BiSolidCommentDetail className='text-white text-3xl' />
-          </div>
-          <div className='w-full flex items-end h-full justify-center flex-col px-[0.5rem]'>
-            <div className='   text-gray-400'>Total Feedbacks</div>
-            <div className='text-[40px] text-gray-800 font-bold'>50+</div>
-          </div>
-        </div>
-        <div className='h-[8rem] px-[1rem] relative w-[16rem] bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl'>
-          <div className='absolute  shadow-[0_3px_10px_rgb(0,0,0,0.2)] top-[-20%] h-[4rem] w-[4rem] left-[10%] flex items-center justify-center bg-red-600 rounded-xl' >
-            <SlCalender className='text-white text-3xl' />
-          </div>
-          <div className='w-full flex items-end h-full justify-center flex-col px-[0.5rem]'>
-            <div className='   text-gray-400'>Joined At</div>
-            <div className='text-[40px] text-gray-800 font-bold'>
-              {
-                new Date().getFullYear()
-              }
-            </div>
-          </div>
-        </div>
-      </div>
+      
+ 
       <div className='w-full flex mx-[1rem] mt-[3rem] gap-[2rem]'>
         <div className='py-[1rem] p-[1rem] relative w-[60%] bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl'>
           <div className='flex w-full items-center justify-between'>
@@ -123,10 +62,12 @@ const DashboardComponent = (props: Props) => {
                 <span className='font-bold'>10</span> added this month
               </p>
             </div>
-            <div className='flex items-center'>
+            <div className='flex items-center cursor-pointer'>
               <div className='flex items-center justify-center rounded-full h-[2rem] w-[2rem]'>
                 <BsPlusCircle className=' text-xl' />
+                
               </div>
+              <p>Create</p>
             </div>
           </div>
           <div className='flex flex-col mt-[2rem]'>
@@ -170,10 +111,13 @@ const DashboardComponent = (props: Props) => {
                 <span className='font-bold'>15</span> added this month
               </p>
             </div>
-            <div className='flex items-center'>
+            <div className='flex items-center cursor-pointer'>
               <div className='flex items-center justify-center rounded-full h-[2rem] w-[2rem]'>
                 <BsPlusCircle className=' text-xl' />
               </div>
+              <p>
+                Create
+              </p>
             </div>
           </div>
           <div className='flex flex-col mt-[2rem]'>

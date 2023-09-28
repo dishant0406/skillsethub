@@ -1,5 +1,5 @@
 import { DashboardComponent } from '@/components'
-import { NotificationComponent, ProfileComponent } from '@/components'
+import { NotificationComponent, ProfileComponent, Analytics } from '@/components'
 import React from 'react'
 
 type Props = {
@@ -16,6 +16,7 @@ const CirculamDev = ({ searchParams }: any) => {
       {tab === 'notifications' && <NotificationComponent />}
       {tab === 'dashboard' && <DashboardComponent />}
       {tab === 'profile' && <ProfileComponent />}
+      {tab === 'analytics' && <Analytics />}
     </div>
   )
 }
